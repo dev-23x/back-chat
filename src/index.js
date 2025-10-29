@@ -19,6 +19,9 @@ app.use(cookieParser());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 // API Routes
+app.use("/", (req, res) => {
+  res.send("hello");
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
