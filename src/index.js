@@ -15,10 +15,10 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 
 // API Routes
-app.get("/", (req, res) => {
+app.get("/status", (req, res) => {
   res.send("API is running...");
 });
 
